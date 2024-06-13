@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Geometria - Abbott e a matemática</title>
+ <link rel="stylesheet" href="estilo1.css">
+ <style>p, h2, li, iframe {margin-left: 200px; margin-right: 200px; text-align: justify;} p, li {font-size: large;} img {margin-left: 200px; margin-right: 200px;}</style>
+</head>
+<body>
+<header>
+ <h1 style="margin: 0.5%;" class="tit1">ABBOTT E A MATEMÁTICA</h1>
+ <div class="tit2">
+   <a href="index.html"><strong>Página inicial</strong></a> |
+   <a style="color: #d4be5e;" href="S2java2.html"><strong>Geometria</strong></a> |
+   <a href="S3java3.html"><strong>Problema 4 da BMO 2023</strong></a>
+ </div>
+</header>
+<section>
+<h2>As 3 figuras básicas da geometria espacial</h2>
+<p>A geometria espacial, diferentemente da geometria plana, possui 3 medidas, isto é, 3 dimensões. Ela logra diversas formas, porém salientamos aqui, respectivamente, as 3 principais: <strong>Pirâmide, Esfera e Cubo.</strong></p>   
+</section>
+<section>
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Pyramid_elements.jpeg/220px-Pyramid_elements.jpeg" height=500px; width="500px">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="http://grupoevolucao.com.br/livro/Matematica2/mat3-gp6.JPG" height=500px; width="500px">
+        </div>
+
+        <div class="mySlides fade">
+            <img src="https://www.infoescola.com/wp-content/uploads/2008/03/diagonal-cubo.jpg" height=500px; width="500px">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    
+    <br>
+
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+        <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 7000); // Muda de imagem a cada 2 segundos
+}
+
+function plusSlides(n) {
+    showSlidesManual(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlidesManual(slideIndex = n);
+}
+
+function showSlidesManual(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}    
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";  
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+}
+</script>
+</section>
+<footer class="fot1" style="color: white">Site desenvolvido por Gabriel Abbott Torres.</footer>
+</body>
+</html>
